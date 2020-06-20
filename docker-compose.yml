@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  rust-hello-world:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - registry:/root/.cargo/registry
+
+volumes:
+    registry:
+        driver: local
